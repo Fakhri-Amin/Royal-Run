@@ -27,8 +27,6 @@ public class CrossSceneMessage : PersistentSingleton<CrossSceneMessage>
 
     public static int GetInt(string key) => Instance.getInt(key);
 
-    public static ProgressionType GetProgressionType(string key) => Instance.getProgressionType(key);
-
     private void send(string key, object value)
     {
         message[key] = value;
@@ -71,10 +69,5 @@ public class CrossSceneMessage : PersistentSingleton<CrossSceneMessage>
     private int getInt(string key)
     {
         return (int)message[key];
-    }
-
-    private ProgressionType getProgressionType(string key)
-    {
-        return (ProgressionType)message[key];
     }
 }
