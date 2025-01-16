@@ -700,7 +700,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3640595e8aeefa43921e23ed21a0a76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chunkPrefab: {fileID: 3512781144572651690, guid: f06aa24b690af074891cc6cc57496fdd, type: 3}
+  playerEventSO: {fileID: 11400000, guid: 8ae8078c72d6b2f40b931033cd861316, type: 2}
+  chunkPrefab: {fileID: 4773921256794794782, guid: f06aa24b690af074891cc6cc57496fdd, type: 3}
   chunkParent: {fileID: 1788459518}
   startingChunkAmount: 12
   chunkLength: 10

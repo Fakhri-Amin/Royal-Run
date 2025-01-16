@@ -1,25 +1,69 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class LevelGenerator : MonoBehaviour
 {
-    [SerializeField] private GameObject chunkPrefab;
+    [SerializeField] private PlayerEventSO playerEventSO;
+    [SerializeField] private Chunk chunkPrefab;
     [SerializeField] private Transform chunkParent;
-    [SerializeField] private float startingChunkAmount = 12;
-    [SerializeField] private float chunkLength = 10;
+    [SerializeField] private int startingChunkAmount = 12;
+    [SerializeField] private float chunkLength = 10f;
 
-    private GameObject[] chunks = new GameObject[12];
+    private readonly List<Chunk> chunks = new List<Chunk>();
 
-    void Start()
+    private void Start()
     {
-        SpawnChunks();
+        SpawnInitialChunks();
     }
 
-    private void SpawnChunks()
+    private void OnEnable()
     {
+        if (playerEventSO != null)
+            playerEventSO.Event.OnChunkDestroyed += HandleChunkDestroyed;
+    }
+
+    private void OnDisable()
+    {
+        if (playerEventSO != null)
+            playerEventSO.Event.OnChunkDestroyed -= HandleChunkDestroyed;
+    }
+
+    private void HandleChunkDestroyed(Chunk chunk)
+    {
+        if (chunks.Contains(chunk))
+        {
+            chunks.Remove(chunk);
+            Destroy(chunk.gameObject); // Destroy the old chunk
+        }
+
+        SpawnNewChunk();
+    }
+
+    private void SpawnInitialChunks()
+    {
+        Vector3 spawnPosition = transform.position;
+
         for (int i = 0; i < startingChunkAmount; i++)
         {
-            GameObject newChunk = Instantiate(chunkPrefab, chunkPrefab.transform.position + Vector3.forward * chunkLength * i, Quaternion.identity, chunkParent);
-            chunks[i] = newChunk;
+            SpawnChunkAtPosition(spawnPosition);
+            spawnPosition += Vector3.forward * chunkLength;
         }
+    }
+
+    private void SpawnNewChunk()
+    {
+        if (chunks.Count == 0) return;
+
+        Vector3 lastChunkPosition = chunks[chunks.Count - 1].transform.position;
+        Vector3 spawnPosition = lastChunkPosition + Vector3.forward * chunkLength;
+
+        SpawnChunkAtPosition(spawnPosition);
+    }
+
+    private void SpawnChunkAtPosition(Vector3 position)
+    {
+        Chunk newChunk = Instantiate(chunkPrefab, position, Quaternion.identity, chunkParent);
+        newChunk.Initialize(chunkLength);
+        chunks.Add(newChunk);
     }
 }

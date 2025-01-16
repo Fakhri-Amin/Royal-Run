@@ -117,6 +117,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1820019536170166208}
+  - component: {fileID: 4773921256794794782}
   - component: {fileID: 4561220793051628336}
   m_Layer: 0
   m_Name: Chunk Prefab
@@ -141,6 +142,19 @@ Transform:
   - {fileID: 4322790835695291460}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4773921256794794782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3512781144572651690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 401058dc0eed7e14fa6488608d017c76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerEventSO: {fileID: 11400000, guid: 8ae8078c72d6b2f40b931033cd861316, type: 2}
 --- !u!114 &4561220793051628336
 MonoBehaviour:
   m_ObjectHideFlags: 0
