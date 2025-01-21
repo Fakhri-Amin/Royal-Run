@@ -1,10 +1,13 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class ObstacleSpawner : MonoBehaviour
 {
-    [SerializeField] private GameObject obstacle;
-    [SerializeField] private float xPosition = 3;
+    [SerializeField] private List<GameObject> obstacles = new();
+    [SerializeField] private float xSpawnPositionRange = 3;
+    [SerializeField] private float ySpawnPosition = 2;
+    [SerializeField] private float zSpawnPosition = 26;
     [SerializeField] private float spawnTime = 1f;
 
     private void Start()
@@ -16,11 +19,11 @@ public class ObstacleSpawner : MonoBehaviour
     {
         while (true)
         {
-            float randomXPosition = Random.Range(-xPosition, xPosition);
-
-            Instantiate(obstacle, new Vector3(randomXPosition, 2, 24), transform.rotation);
-
             yield return new WaitForSeconds(spawnTime);
+
+            float randomXPosition = Random.Range(-xSpawnPositionRange, xSpawnPositionRange);
+            GameObject randomObstacle = obstacles[Random.Range(0, obstacles.Count)];
+            Instantiate(randomObstacle, new Vector3(randomXPosition, ySpawnPosition, zSpawnPosition), Random.rotation);
         }
     }
 }

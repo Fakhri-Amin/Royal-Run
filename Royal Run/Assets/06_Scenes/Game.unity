@@ -163,9 +163,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62a345efd56fb394f80237a9866ee2e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacle: {fileID: 614286338942502864, guid: 7129b588798f70a4eb1b12cb25a891fd, type: 3}
-  xPosition: 3
-  spawnDelay: 1
+  obstacles:
+  - {fileID: 3828495362209185676, guid: 21e316bb3fe895b478d0050e0e7d7b54, type: 3}
+  - {fileID: 1035363894805967676, guid: ca717ce9ac5ccc143bd4aa1fc081e494, type: 3}
+  - {fileID: 600241202215152339, guid: 9f81d9e42b642e645bb667609ef2253b, type: 3}
+  - {fileID: 600241202215152339, guid: 580c1d7904726214982f73c033ea6879, type: 3}
+  xSpawnPositionRange: 3
+  ySpawnPosition: 2
+  zSpawnPosition: 60
+  spawnTime: 1
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
