@@ -4,12 +4,13 @@ using UnityEngine;
 public class LevelGenerator : MonoBehaviour
 {
     [SerializeField] private PlayerEventSO playerEventSO;
-    [SerializeField] private Chunk chunkPrefab;
+    [SerializeField] private List<Chunk> chunkPrefabs = new();
     [SerializeField] private Transform chunkParent;
     [SerializeField] private int startingChunkAmount = 12;
     [SerializeField] private float chunkLength = 10f;
 
     private readonly List<Chunk> chunks = new List<Chunk>();
+    private List<int> angles = new List<int> { 0, 180 };
 
     private void Start()
     {
@@ -62,7 +63,8 @@ public class LevelGenerator : MonoBehaviour
 
     private void SpawnChunkAtPosition(Vector3 position)
     {
-        Chunk newChunk = Instantiate(chunkPrefab, position, Quaternion.identity, chunkParent);
+        Chunk randomChunk = chunkPrefabs[Random.Range(0, chunkPrefabs.Count)];
+        Chunk newChunk = Instantiate(randomChunk, position, Quaternion.identity, chunkParent);
         newChunk.Initialize(chunkLength);
         chunks.Add(newChunk);
     }
