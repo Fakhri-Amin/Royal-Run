@@ -198,12 +198,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e40552bca9cc464295fcf108066498a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hazardPrefab: {fileID: 5243531008826323516, guid: 09a897ee37c15e54ba40bd4f938e90c5, type: 3}
+  hazardPrefabs:
+  - {fileID: 5243531008826323516, guid: 09a897ee37c15e54ba40bd4f938e90c5, type: 3}
+  - {fileID: 5243531008826323516, guid: d07d76b31db94c74b9c8188adfd5ac54, type: 3}
+  - {fileID: 5243531008826323516, guid: f21e42e97e1dee94b9b78b8e5fbbe71c, type: 3}
   spawnYOffset: 0.5
   lanes:
   - -2.8
   - 0
   - 2.8
+  hazardAnglesOffset: 90
 --- !u!1 &5225830407256261395
 GameObject:
   m_ObjectHideFlags: 0
@@ -428,7 +432,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 451758, guid: ddbadbbf2e888f543be87dc84c7e5ec8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.997345
+      value: -8.43
       objectReference: {fileID: 0}
     - target: {fileID: 451758, guid: ddbadbbf2e888f543be87dc84c7e5ec8, type: 3}
       propertyPath: m_LocalPosition.y
