@@ -119,6 +119,7 @@ GameObject:
   - component: {fileID: 1820019536170166208}
   - component: {fileID: 4773921256794794782}
   - component: {fileID: 4561220793051628336}
+  - component: {fileID: 8434017686927028465}
   m_Layer: 0
   m_Name: Chunk Prefab
   m_TagString: Untagged
@@ -168,6 +169,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 12
+--- !u!114 &8434017686927028465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3512781144572651690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e40552bca9cc464295fcf108066498a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hazardPrefab: {fileID: 5243531008826323516, guid: 09a897ee37c15e54ba40bd4f938e90c5, type: 3}
+  spawnYOffset: 0.5
+  lanes:
+  - -2.8
+  - 0
+  - 2.8
 --- !u!1 &6845316916553704506
 GameObject:
   m_ObjectHideFlags: 0
