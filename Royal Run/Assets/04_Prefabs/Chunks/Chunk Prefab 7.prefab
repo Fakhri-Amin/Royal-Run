@@ -120,6 +120,8 @@ GameObject:
   - component: {fileID: 4773921256794794782}
   - component: {fileID: 4561220793051628336}
   - component: {fileID: -9183565196706802222}
+  - component: {fileID: 9061517636121995538}
+  - component: {fileID: 5528097699825222809}
   m_Layer: 0
   m_Name: Chunk Prefab 7
   m_TagString: Untagged
@@ -172,6 +174,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 401058dc0eed7e14fa6488608d017c76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Lanes:
+  - -3
+  - 0
+  - 3
   playerEventSO: {fileID: 11400000, guid: 8ae8078c72d6b2f40b931033cd861316, type: 2}
 --- !u!114 &4561220793051628336
 MonoBehaviour:
@@ -203,11 +209,41 @@ MonoBehaviour:
   - {fileID: 5243531008826323516, guid: d07d76b31db94c74b9c8188adfd5ac54, type: 3}
   - {fileID: 5243531008826323516, guid: f21e42e97e1dee94b9b78b8e5fbbe71c, type: 3}
   spawnYOffset: 0.5
-  lanes:
-  - -2.8
-  - 0
-  - 2.8
   hazardAnglesOffset: 90
+--- !u!114 &9061517636121995538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3512781144572651690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e129c5cfbce51e498b7db2a317cc129, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsSpawnMultiple: 0
+  collectableItemPrefab: {fileID: 8640858213990792684, guid: 85aef0934ce609041a71105f6d5779de, type: 3}
+  spawnYOffset: 0.4
+  hazardAnglesOffset: 45
+  spawnSpaceBetween: 3
+--- !u!114 &5528097699825222809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3512781144572651690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e129c5cfbce51e498b7db2a317cc129, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsSpawnMultiple: 1
+  collectableItemPrefab: {fileID: 8640858213990792684, guid: af20270342d081c47b57305e3a281410, type: 3}
+  spawnYOffset: 0.2
+  hazardAnglesOffset: 90
+  spawnSpaceBetween: 1.5
 --- !u!1 &5225830407256261395
 GameObject:
   m_ObjectHideFlags: 0
