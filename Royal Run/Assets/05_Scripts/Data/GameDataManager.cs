@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using Eggtato.Utility;
+using Farou.Utility;
 using UnityEngine;
 
 public class GameDataManager : PersistentSingleton<GameDataManager>

@@ -1,7 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Eggtato.Utility;
+using Farou.Utility;
 using UnityEngine;
 
 public class CrossSceneMessage : PersistentSingleton<CrossSceneMessage>

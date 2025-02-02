@@ -1,4 +1,4 @@
-using Eggtato.Utility;
+using Farou.Utility;
 using UnityEngine;
 
 public class PersistentGameObject : PersistentSingleton<PersistentGameObject>

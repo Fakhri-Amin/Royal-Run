@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEditor.Search;
 using UnityEngine;
 
-public class CollectableItem : MonoBehaviour
+public class PickUpItemSpawner : MonoBehaviour
 {
     public bool IsSpawnMultiple = false;
-    [SerializeField] private GameObject collectableItemPrefab;
+    [SerializeField] private GameObject pickUpItemPrefab;
     [SerializeField] private float spawnYOffset;
     [SerializeField] private float hazardAnglesOffset = 10f;
     [SerializeField] private float spawnSpaceBetween = 3f;
@@ -22,15 +22,15 @@ public class CollectableItem : MonoBehaviour
     {
         if (IsSpawnMultiple)
         {
-            SpawnMultipleCollectableItem();
+            SpawnMultiplePickUpItem();
         }
         else
         {
-            SpawnSingleCollectableItem();
+            SpawnSinglePickUpItem();
         }
     }
 
-    private void SpawnSingleCollectableItem()
+    private void SpawnSinglePickUpItem()
     {
         bool canSpawn = Random.value <= 0.3f;
         if (chunk.IsAvailableLaneEmpty() || !canSpawn) return;
@@ -40,10 +40,10 @@ public class CollectableItem : MonoBehaviour
         Vector3 spawnPosition = new Vector3(chunk.Lanes[selectedLane], transform.position.y + spawnYOffset, transform.position.z);
 
         float randomAngle = Random.Range(-hazardAnglesOffset, hazardAnglesOffset);
-        Instantiate(collectableItemPrefab, spawnPosition, Quaternion.Euler(new Vector3(0, randomAngle, 0)), transform);
+        Instantiate(pickUpItemPrefab, spawnPosition, Quaternion.Euler(new Vector3(0, randomAngle, 0)), transform);
     }
 
-    private void SpawnMultipleCollectableItem()
+    private void SpawnMultiplePickUpItem()
     {
         bool canSpawn = Random.value <= 0.5f;
         if (chunk.IsAvailableLaneEmpty() || !canSpawn) return;
@@ -62,7 +62,7 @@ public class CollectableItem : MonoBehaviour
             Vector3 spawnPosition = new Vector3(chunk.Lanes[selectedLane], transform.position.y + spawnYOffset, spawnZPosition);
 
             float randomAngle = Random.Range(-hazardAnglesOffset, hazardAnglesOffset);
-            Instantiate(collectableItemPrefab, spawnPosition, Quaternion.Euler(new Vector3(0, randomAngle, 0)), transform);
+            Instantiate(pickUpItemPrefab, spawnPosition, Quaternion.Euler(new Vector3(0, randomAngle, 0)), transform);
         }
     }
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Eggtato.Utility
+namespace Farou.Utility
 {
     public enum EventType
     {

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Eggtato.Utility
+namespace Farou.Utility
 {
     public class PersistentSingleton<T> : MonoBehaviour where T : Component
     {

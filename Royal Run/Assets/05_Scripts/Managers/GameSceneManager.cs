@@ -1,6 +1,6 @@
 using UnityEngine;
 using MoreMountains.Feedbacks;
-using Eggtato.Utility;
+using Farou.Utility;
 
 public class GameSceneManager : MonoBehaviour
 {

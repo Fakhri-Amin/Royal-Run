@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEditor.Search;
 using UnityEngine;
 
-public class Hazard : MonoBehaviour
+public class HazardSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject[] hazardPrefabs;
     [SerializeField] private float spawnYOffset;
     [SerializeField] private float hazardAnglesOffset = 10f;
 
     private Chunk chunk;
+    private GameObject spawnedHazard;
 
     private void Awake()
     {
@@ -36,8 +37,13 @@ public class Hazard : MonoBehaviour
             GameObject randomHazard = hazardPrefabs[Random.Range(0, hazardPrefabs.Length)];
 
             float randomAngle = Random.Range(-hazardAnglesOffset, hazardAnglesOffset);
-            Instantiate(randomHazard, spawnPosition, Quaternion.Euler(new Vector3(0, randomAngle, 0)), transform);
+            spawnedHazard = Instantiate(randomHazard, spawnPosition, Quaternion.Euler(new Vector3(0, randomAngle, 0)), transform);
         }
+    }
 
+    public void ClearHazard()
+    {
+        spawnedHazard = null;
+        Destroy(spawnedHazard);
     }
 }

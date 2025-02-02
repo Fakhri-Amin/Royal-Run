@@ -24,6 +24,7 @@ public class ObstacleSpawner : MonoBehaviour
             float randomXPosition = Random.Range(-xSpawnPositionRange, xSpawnPositionRange);
             GameObject randomObstacle = obstacles[Random.Range(0, obstacles.Count)];
             Instantiate(randomObstacle, new Vector3(randomXPosition, ySpawnPosition, zSpawnPosition), Random.rotation);
+
         }
     }
 }

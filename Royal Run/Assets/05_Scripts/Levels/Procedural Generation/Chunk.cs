@@ -5,12 +5,14 @@ public class Chunk : MonoBehaviour
 {
     public float[] Lanes = { -3, 0, 3 };
     [SerializeField] private PlayerEventSO playerEventSO;
+    [SerializeField] private ChunkType chunkType;
 
     private readonly List<int> availableLanes = new List<int>() { 0, 1, 2 };
     private float chunkLength;
 
     public PlayerEventSO PlayerEventSO => playerEventSO;
     public float ChunkLength => chunkLength;
+    public ChunkType ChunkType => chunkType;
 
     public void Initialize(float chunkLength)
     {

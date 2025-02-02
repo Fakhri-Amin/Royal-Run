@@ -5,10 +5,12 @@ public class ChunkMovement : MonoBehaviour
     [SerializeField] private float moveSpeed = 4;
 
     private Chunk chunk;
+    private HazardSpawner hazardSpawner;
 
     private void Awake()
     {
         chunk = GetComponent<Chunk>();
+        hazardSpawner = GetComponent<HazardSpawner>();
     }
 
     void Update()
